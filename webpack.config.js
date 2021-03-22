@@ -8,6 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
+    assetModuleFilename: "assets/images/[hash][ext]"
   },
   resolve: {
     extensions: [".js"],
@@ -27,7 +28,7 @@ module.exports = {
       },
       {
         test: /\.png/,
-        type: 'asset/resourse'
+        type: 'asset/resource'
       }
     ],
   },
@@ -38,13 +39,13 @@ module.exports = {
       filename: "index.html",
     }),
     new MiniCssExtractPlugin(),
-    new copyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, "src", "assets/images"),
-          to: "assets/images",
-        }
-      ]
-    })
+    // new copyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: path.resolve(__dirname, "src", "assets/images"),
+    //       to: "assets/images",
+    //     }
+    //   ]
+    // })
   ],
 };
