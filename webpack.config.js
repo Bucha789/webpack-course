@@ -11,8 +11,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle[contenthash].js",
-    assetModuleFilename: "assets/images/[hash][ext]"
+    assetModuleFilename: "assets/images/[hash][ext]",
+    clean: true,
   },
+  mode: 'production',
   resolve: {
     extensions: [".js"],
     alias: {
